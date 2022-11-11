@@ -51,8 +51,7 @@ m = -weights[0]/weights[1]
 c = -weights[2]/weights[1]
 x = np.linspace(-0.1, 1.1, 1000)
 y = m*x + c
-[plt.scatter(trainingDataInputs[i][0], trainingDataInputs[i]
-             [1], c='r' if trainingDataOutputs[i] == 0 else 'g') for i in range(4)]
+[plt.scatter(trainingDataInputs[i][0], trainingDataInputs[i][1], c='r' if trainingDataOutputs[i] == 0 else 'g') for i in range(4)]
 plt.plot(x, y)
 plt.xlim(-0.1, 1.1)
 plt.ylim(-0.1, 1.1)
