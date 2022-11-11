@@ -1,5 +1,5 @@
 # Logic-Gates-With-Single-Layer-Perceptron
-This repository contains a python code modeling the logic gates using a neural network with one neuron (single-layer perceptron).
+This repository contains a python code modeling four logic gates using a neural network with one neuron (single-layer perceptron).
 >**Used modules:**
 1. numpy (for creating arrays and performing mathematical operations on them).
 2. random (for generating random values for the network weights during initialization).
