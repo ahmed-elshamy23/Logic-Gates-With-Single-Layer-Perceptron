@@ -16,7 +16,7 @@ options = ["AND", "OR", "NAND", "NOR"]
 optionsIndex = 0
 
 print("Our perceptron can model the following gates:\n1- AND\n2- OR\n3- NAND\n4- NOR")
-choice = int(input("ُ\nEnter the gate number: "))
+choice = int(input("\nEnter the gate number: "))
 match choice:
     case 1:
         trainingDataOutputs = np.array([0, 0, 0, 1])
@@ -45,16 +45,20 @@ for i in range(10000):
 
 print(
     f"\nFinal weights for {options[optionsIndex]} gate:\nw1 = {weights[0]}, w2 = {weights[1]}, b = {weights[2]}")
-print("\nDecision boundary plotted successfully!\n")
+print("\nDecision boundary was plotted successfully!\n")
 
 m = -weights[0]/weights[1]
 c = -weights[2]/weights[1]
 x = np.linspace(-0.1, 1.1, 1000)
 y = m*x + c
-[plt.scatter(trainingDataInputs[i][0], trainingDataInputs[i][1], c='r' if trainingDataOutputs[i] == 0 else 'g') for i in range(4)]
+[plt.scatter(trainingDataInputs[i][0], trainingDataInputs[i]
+             [1], c='r' if trainingDataOutputs[i] == 0 else 'g') for i in range(4)]
 plt.plot(x, y)
+plt.grid()
 plt.xlim(-0.1, 1.1)
 plt.ylim(-0.1, 1.1)
-plt.grid()
+plt.title(f"Decision boundary of {options[optionsIndex]} gate")
+plt.xlabel("input 1")
+plt.ylabel("input 2")
 plt.show()
 os.system("pause")
